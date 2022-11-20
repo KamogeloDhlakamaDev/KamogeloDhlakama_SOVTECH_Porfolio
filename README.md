@@ -17,6 +17,10 @@ Below is how you would boostrap the project. It will include all the npm package
 ```
 
 ### Deployed Version
+
+The project was deployed on **Vercel**
+
+
 Link to Deployed version: https://kamogelodev-portfolio.vercel.app/
 
 ## Design & Wireframes
