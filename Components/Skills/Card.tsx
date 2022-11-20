@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const Card:React.FC<any> = ({Title,ImageSrc}) => {
     return (
-        <div className="w-full h-14 flex  gap-2 border rounded-md p-2 justify-between bg-white shadow ">
-            <div className="w-[20%] h-full rounded-md relative"> 
+        <div className="w-full h-20 flex  gap-2 border rounded-md p-2 justify-between bg-white shadow ">
+            <div className="w-[35%] h-full rounded-md relative"> 
             <Image
                   src={ImageSrc}
                   alt="Kamogelo Dhlakama"
@@ -13,7 +13,7 @@ const Card:React.FC<any> = ({Title,ImageSrc}) => {
                 />
             </div>
 
-            <div className="w-[80%] h-full justify-center  flex items-center relative font-normal  text-sm">
+            <div className="w-[65%] h-full justify-center  flex items-center relative font-normal  text-sm">
                 <p>{Title}</p>
             </div>
         </div>

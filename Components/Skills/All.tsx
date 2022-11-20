@@ -29,7 +29,7 @@ const All: React.FC<any> = () => {
   return (
     <>
       <div className="w-full   h-full items-center flex justify-center    p-2">
-        <div className="w-full h-[70%] grid grid-cols-4 justify-center  gap-2">
+        <div className="w-full h-[50%] grid grid-cols-4 justify-center  gap-2">
           {AllSkill.map((Skill: SkillsObj) => (
             <Card Title={Skill.Name} ImageSrc={Skill.Image} />
           ))}
