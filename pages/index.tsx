@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Programming from "../Components/Skills/Programming";
 import All from "../Components/Skills/All";
 import Design from "../Components/Skills/Design";
@@ -15,6 +15,18 @@ export interface SkillsObj {
 
 export default function Home() {
   //Setting my state values for each navigation
+
+  const HomeSection = useRef(null);
+  const SkillSection = useRef(null);
+  const WhySection = useRef(null);
+  const EduSection = useRef(null);
+
+  const ScrollToSection = (elemenRef: any) => {
+    window.scrollTo({
+      top: elemenRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
   const [TempHome, SetTempHome] = useState<boolean>(true);
   const [TempSkills, SetTempSkills] = useState<boolean>(false);
   const [TempWhy, SetTempWhy] = useState<boolean>(false);
@@ -142,6 +154,7 @@ export default function Home() {
             <div
               onClick={() => {
                 SetToggle(HomeNav);
+                ScrollToSection(HomeSection);
               }}
               className={
                 TempHome
@@ -163,6 +176,7 @@ export default function Home() {
             <div
               onClick={() => {
                 SetToggle(SkillsNav);
+                ScrollToSection(SkillSection);
               }}
               className={
                 TempSkills
@@ -183,6 +197,7 @@ export default function Home() {
             <div
               onClick={() => {
                 SetToggle(WhyNav);
+                ScrollToSection(WhySection);
               }}
               className={
                 TempWhy
@@ -203,6 +218,7 @@ export default function Home() {
             <div
               onClick={() => {
                 SetToggle(EduNav);
+                ScrollToSection(EduSection);
               }}
               className={
                 TempEducation
@@ -294,7 +310,10 @@ export default function Home() {
 
         {/* Hero Section  */}
 
-        <div className="w-full  h-[100vh] flex relative items-end  ">
+        <div
+          ref={HomeSection}
+          className="w-full  h-[100vh] flex relative items-end  "
+        >
           <div className="w-[100vw] h-[100vh] absolute -z-10 top-0 right-0 bg-blue-100">
             <div className="w-full relative h-full  bg-white flex">
               <Image
@@ -355,7 +374,10 @@ export default function Home() {
 
         {/* My Skills Section */}
 
-        <div className="w-full h-[100vh]  flex flex-col gap-2 items-center py-12 relative  ">
+        <div
+          ref={SkillSection}
+          className="w-full h-[100vh]  flex flex-col gap-2 items-center py-12 relative  "
+        >
           <div className="w-[100vw] h-[30vh] absolute  top-0 right-0 bg-blue-100 items-center flex">
             <div className="w-full relative h-full  bg-white flex justify-center ">
               <Image
@@ -482,7 +504,10 @@ export default function Home() {
 
         {/* Why Section */}
 
-        <div className="w-full h-[100vh]  flex flex-col gap-5 items-center py-12 relative bg-[#FB6B90] ">
+        <div
+          ref={WhySection}
+          className="w-full h-[100vh]  flex flex-col gap-5 items-center py-12 relative bg-[#FB6B90] "
+        >
           <div className="w-full  px-20 flex items-center justify-center py-3 text-7xl font-semibold text-white ">
             <h1>Why SovTech?</h1>
           </div>
@@ -510,7 +535,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full h-[100vh]   flex flex-col gap-5 items-center py-12 relative ">
+        {/* Education Section */}
+        <div
+          ref={EduSection}
+          className="w-full h-[100vh]   flex flex-col gap-5 items-center py-12 relative "
+        >
           <div className="w-[100vw] h-[100vh] absolute  top-0 right-0 bg-blue-100">
             <div className="w-full relative h-full  bg-white flex">
               <Image
