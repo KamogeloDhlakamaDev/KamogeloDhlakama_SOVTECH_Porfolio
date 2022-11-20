@@ -137,6 +137,9 @@ export default function Home() {
   };
   return (
     <>
+      <Head>
+        <title>KamogeloDev. | Home</title>
+      </Head>
       <div className="w-full h-full   flex flex-col relative ">
         {/* Navigation Bar */}
         <div className="w-full shadow-md h-16 flex gap-2 py-2 px-20 z-20 fixed  justify-between bg-white   ">
