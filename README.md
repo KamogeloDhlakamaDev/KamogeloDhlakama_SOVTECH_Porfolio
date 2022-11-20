@@ -15,6 +15,7 @@ Below is how you would boostrap the project. It will include all the npm package
   npm install 
   npm run dev
 ```
+Once you have installed the packages related to the project and hosted the project on your locally. You can now run on your browser via the localhost post indicated by the command prompt.
 
 ### Deployed Version
 
